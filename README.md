@@ -13,14 +13,12 @@ The dataset used in this project can be found at the UCI Machine Learning Reposi
 ## Project Structure
 
 - `data/`: Contains the dataset files.
-- `notebooks/`: Jupyter notebooks used for data exploration and analysis.
+- `notebook/`: Jupyter notebooks used for data exploration and analysis.
 - `scripts/`: Python scripts for data processing, model training, and evaluation.
 - `README.md`: Project documentation.
 - `requirements.txt`: List of Python dependencies required for the project.
-- `results/`: Contains the output results, including model performance metrics and visualizations.
-- `models/`: Saved machine learning models.
 
-## Getting Started
+## Reproducibility 
 
 ### System Requirements
 
@@ -28,7 +26,7 @@ The dataset used in this project can be found at the UCI Machine Learning Reposi
 - Docker (optional, for containerized setup)
 - Streamlit (for web app deployment)
 
-### Environment Setup
+### Local Setup
 
 To get started with the project, follow these steps:
 
@@ -56,7 +54,17 @@ To get started with the project, follow these steps:
    pipenv run streamlit run app.py --server.port 8501
    ```
 
+### Docker Setup
 
+1. Build the Docker image:
+   ```bash
+   docker build -t student-performance .
+   ```
+
+2. Run the Docker container:
+   ```bash
+   docker run -p 9696:9696 student-performance
+   ```
 
 ## License
 
@@ -65,5 +73,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgements
 
 - The dataset is provided by the UCI Machine Learning Repository.
+- Kaggle by Nezahat Korkmaz: [https://www.kaggle.com/code/nezahatkk/uci-gradient-boosting-student-performance-dataset](https://www.kaggle.com/code/nezahatkk/uci-gradient-boosting-student-performance-dataset)
 - This project is part of the MLZoomcamp Capstone Project 1.
 - Special thanks to the MLZoomcamp community for their support and resources.
