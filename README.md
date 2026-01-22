@@ -1,2 +1,52 @@
-# student-performance
-MLZoomcamp Capstone Project 1
+# Student Performance Project
+
+## Project Overview
+
+This repository contains the code and documentation for the student performance analysis project, which is part of the MLZoomcamp Capstone Project 1. The project utilizes the "Student Performance" dataset from the UCI Machine Learning Repository to analyze and predict student grades based on various features.
+
+Cortez, P. (2008). Student Performance [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5TG7T.
+
+## Dataset
+
+The dataset used in this project can be found at the UCI Machine Learning Repository: [Student Performance Data Set](https://archive.ics.uci.edu/dataset/320/student+performance). It contains various attributes related to student demographics, social and school-related features, and their grades.
+
+## Project Structure
+
+- `data/`: Contains the dataset files.
+- `notebooks/`: Jupyter notebooks used for data exploration and analysis.
+- `scripts/`: Python scripts for data processing, model training, and evaluation.
+- `README.md`: Project documentation.
+- `requirements.txt`: List of Python dependencies required for the project.
+- `results/`: Contains the output results, including model performance metrics and visualizations.
+- `models/`: Saved machine learning models.
+
+## Getting Started
+
+To get started with the project, follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone
+   ```
+2. Navigate to the project directory:
+   ```bash
+    cd student-performance-project
+    ```
+
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Download the dataset from the UCI repository and place it in the `data/` directory.
+5. Run the Jupyter notebooks in the `notebooks/` directory for data exploration and analysis.
+6. Use the scripts in the `scripts/` directory to preprocess data, train models, and evaluate performance.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- The dataset is provided by the UCI Machine Learning Repository.
+- This project is part of the MLZoomcamp Capstone Project 1.
+- Special thanks to the MLZoomcamp community for their support and resources.
