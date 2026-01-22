@@ -22,24 +22,41 @@ The dataset used in this project can be found at the UCI Machine Learning Reposi
 
 ## Getting Started
 
+### System Requirements
+
+- Python 3.12 or higher
+- Docker (optional, for containerized setup)
+- Streamlit (for web app deployment)
+
+### Environment Setup
+
 To get started with the project, follow these steps:
+
 1. Clone the repository:
    ```bash
-   git clone
+   git clone https://github.com/alfanugraha/student-performance.git
    ```
 2. Navigate to the project directory:
    ```bash
-    cd student-performance-project
+    cd student-performance
     ```
 
 3. Install the required dependencies:
    ```bash
-   pip install -r requirements.txt
+   pipenv install
    ```
 
-4. Download the dataset from the UCI repository and place it in the `data/` directory.
-5. Run the Jupyter notebooks in the `notebooks/` directory for data exploration and analysis.
-6. Use the scripts in the `scripts/` directory to preprocess data, train models, and evaluate performance.
+4. Run the model
+   ```bash
+   pipenv run python scripts/predict.py
+   ```
+
+5. (Optional) To run the Streamlit web application:
+   ```bash
+   pipenv run streamlit run app.py --server.port 8501
+   ```
+
+
 
 ## License
 
