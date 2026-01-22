@@ -106,7 +106,7 @@ To access the app, open your web browser and navigate to `http://localhost:8501`
 
 ### Cloud Deployment
 
-
+Streamlit App deployment is available at: [https://student-performance-capstone-zoomcamp.streamlit.app/](https://student-performance-capstone-zoomcamp.streamlit.app/)
 
 ## License
 
