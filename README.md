@@ -12,11 +12,31 @@ The dataset used in this project can be found at the UCI Machine Learning Reposi
 
 ## Project Structure
 
-- `data/`: Contains the dataset files.
-- `notebook/`: Jupyter notebooks used for data exploration and analysis.
-- `scripts/`: Python scripts for data processing, model training, and evaluation.
-- `README.md`: Project documentation.
-- `requirements.txt`: List of Python dependencies required for the project.
+```
+└── 📁student-performance
+    └── 📁data
+        ├── student-mat.csv
+        ├── student-merge.R
+        ├── student-por.csv
+        ├── student.txt
+    └── 📁images
+        ├── app.png
+    └── 📁notebook
+        ├── best_model.pkl
+        ├── student_performance.ipynb
+    └── 📁scripts
+        ├── dtree_model.pkl
+        ├── predict-test.py
+        ├── predict.py
+        ├── train.py
+    ├── app.py
+    ├── Dockerfile
+    ├── LICENSE
+    ├── Pipfile
+    ├── Pipfile.lock
+    ├── README.md
+    └── requirements.txt
+```
 
 ## Reproducibility 
 
@@ -49,12 +69,24 @@ To get started with the project, follow these steps:
    pipenv run python scripts/predict.py
    ```
 
-5. (Optional) To run the Streamlit web application:
+5. Test the model with test data
    ```bash
-   pipenv run streamlit run app.py --server.port 8501
+   pipenv run python scripts/predict-test.py
    ```
 
-### Docker Setup
+### Streamlit App Preview
+
+Run streamlit webapps (optional) with the following command:
+
+```bash
+pipenv run streamlit run app.py --server.port 8501
+```
+
+![Streamlit App Preview](./images/app.png)
+
+To access the app, open your web browser and navigate to `http://localhost:8501`
+
+### Docker Container
 
 1. Build the Docker image:
    ```bash
@@ -65,6 +97,16 @@ To get started with the project, follow these steps:
    ```bash
    docker run -p 9696:9696 student-performance
    ```
+   Flask API will be accessible at `http://localhost:9696/predict`
+
+3. Test the model
+   ```bash
+   python scripts/predict-test.py
+   ```
+
+### Cloud Deployment
+
+
 
 ## License
 
