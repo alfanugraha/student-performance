@@ -1,4 +1,4 @@
-FROM python:3.12.12-slim-bookworm
+FROM python:3.12.7-slim-bookworm
 
 RUN pip install pipenv
 
@@ -10,6 +10,7 @@ RUN pipenv install --system --deploy
 
 COPY scripts/predict.py predict.py
 COPY scripts/dtree_model.pkl dtree_model.pkl
+COPY scripts/predict-test.py test.py
 
 EXPOSE 9696
 
