@@ -55,6 +55,9 @@ Additional note: there are several (382) students that belong to both datasets
 
 ```
 └── 📁student-performance
+    └── 📁awseb
+        ├── eb-config.yml
+        ├── test.py
     └── 📁data
         ├── student-mat.csv
         ├── student-merge.R
@@ -62,6 +65,8 @@ Additional note: there are several (382) students that belong to both datasets
         ├── student.txt
     └── 📁images
         ├── app.png
+        ├── aws-eb-deploy.png
+        ├── aws-eb-env.png
     └── 📁notebook
         ├── best_model.pkl
         ├── student_performance.ipynb
@@ -70,6 +75,7 @@ Additional note: there are several (382) students that belong to both datasets
         ├── predict-test.py
         ├── predict.py
         ├── train.py
+    ├── .gitignore
     ├── app.py
     ├── Dockerfile
     ├── LICENSE
