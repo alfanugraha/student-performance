@@ -1,12 +1,12 @@
-FROM python:3.12.7-slim-bookworm
+FROM python:3.12-slim-bookworm
 
-RUN pip install pipenv
+RUN pip install pipenv --no-cache-dir pipenv
 
 WORKDIR /app
 
 COPY ["Pipfile", "Pipfile.lock", "./"]
 
-RUN pipenv install --system --deploy
+RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY scripts/predict.py predict.py
 COPY scripts/dtree_model.pkl dtree_model.pkl

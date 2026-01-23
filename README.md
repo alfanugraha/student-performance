@@ -166,7 +166,19 @@ To access the app, open your web browser and navigate to `http://localhost:8501`
 
 ### Cloud Deployment
 
-Streamlit App deployment is available at: [https://student-performance-capstone-zoomcamp.streamlit.app/](https://student-performance-capstone-zoomcamp.streamlit.app/)
+Streamlit App deployment is available at: [https://student-performance-capstone-zoomcamp.streamlit.app/](https://student-performance-capstone-zoomcamp.streamlit.app/).
+
+This project has also been deployed to AWS Elastic Beanstalk.
+
+```bash
+pipenv install awsebcli --dev
+pipenv shell
+
+eb init -p docker -r us-east-1 student-performance
+eb local run --port 9696
+
+eb create student-performance-env
+```
 
 ## License
 
