@@ -229,5 +229,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - The dataset is provided by the UCI Machine Learning Repository.
 - Kaggle by Nezahat Korkmaz: [https://www.kaggle.com/code/nezahatkk/uci-gradient-boosting-student-performance-dataset](https://www.kaggle.com/code/nezahatkk/uci-gradient-boosting-student-performance-dataset)
-- This project is part of the MLZoomcamp Capstone Project 1.
+- This project is part of the MLZoomcamp Capstone Project 2.
 - Special thanks to the MLZoomcamp community for their support and resources.
