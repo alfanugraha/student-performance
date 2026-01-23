@@ -81,7 +81,23 @@ Additional note: there are several (382) students that belong to both datasets
 
 ## Modelling 
 
-The model used in this project is a model that predicts the probability of a student having a final grade based on the input criterias. The model was trained using Logistic Regression, Decision Tree, Random Forest, KNN, and SVM. Other potential models have not been explored in this project but could be considered for future work.
+The model used in this project is a model that predicts the probability of a student having a final grade based on the input criterias. The model was trained using Logistic Regression, Decision Tree, Random Forest, KNN, and SVM. Other potential models have not been explored in this project but could be considered for future work. Other metrics such RMSE, MAE, and R2 Score could also be a good addition to evaluate the models.
+
+The best model based on F1 Score is the **Decision Tree (Tuned)** with the following performance metrics:
+
+| Model | Accuracy | F1 Score |
+|------|-----------|----------|
+| Logistic Regression | 0.24 | 0.18 |
+| Decision Tree | 0.39 | 0.31 |
+| Random Forest | 0.30 | 0.21 |
+| KNN | 0.29 | 0.21 |
+| SVM | 0.21 | 0.09 |
+| Logistic Regression (Tuned) | 0.29 | 0.21 |
+| **Decision Tree (Tuned)** | **0.49** | **0.41** |
+| Random Forest (Tuned) | 0.30 | 0.22 |
+| KNN (Tuned) | 0.29 | 0.21 |
+| SVM (Tuned) | 0.43 | 0.37 |
+
 
 The training and tuning works is available in [the notebook](https://github.com/alfanugraha/student-performance/blob/master/notebook/student_performance.ipynb).
 
@@ -93,10 +109,10 @@ python scripts/train.py
 
 This model artifact is used directly by:
 - predict.py
-- FastAPI inference service
+- Flask API service
 - Streamlit web app
 - Dockerized deployment
-- Cloud Run deployment
+- AWS Elastic Beanstalk deployment
 
 ## Reproducibility 
 
@@ -106,7 +122,13 @@ This model artifact is used directly by:
 - Docker (optional, for containerized setup)
 - Streamlit (for web app deployment)
 
-### Local Setup
+Run the following command to install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Local Setup and Flask API
 
 To get started with the project, follow these steps:
 
@@ -129,6 +151,8 @@ To get started with the project, follow these steps:
    pipenv run python scripts/predict.py
    ```
 
+   Flask API will be accessible at `http://localhost:9696/predict`
+
 5. Test the model with test data
    ```bash
    pipenv run python scripts/predict-test.py
@@ -146,7 +170,7 @@ pipenv run streamlit run app.py --server.port 8501
 
 To access the app, open your web browser and navigate to `http://localhost:8501`
 
-### Docker Container
+### Docker Container 
 
 1. Build the Docker image:
    ```bash
@@ -157,27 +181,38 @@ To access the app, open your web browser and navigate to `http://localhost:8501`
    ```bash
    docker run -p 9696:9696 student-performance
    ```
-   Flask API will be accessible at `http://localhost:9696/predict`
 
 3. Test the model
    ```bash
    python scripts/predict-test.py
    ```
 
-### Cloud Deployment
+## Cloud Deployment
 
 Streamlit App deployment is available at: [https://student-performance-capstone-zoomcamp.streamlit.app/](https://student-performance-capstone-zoomcamp.streamlit.app/).
 
-This project has also been deployed to AWS Elastic Beanstalk.
+This project has also been deployed to AWS Elastic Beanstalk with the following steps:
 
 ```bash
 pipenv install awsebcli --dev
 pipenv shell
 
-eb init -p docker -r us-east-1 student-performance
+eb init -p docker -r us-east-1 student-performance-api
 eb local run --port 9696
 
 eb create student-performance-env
+```
+
+![AWS Elastic Beanstalk CLI](./images/aws-eb-deploy.png)
+
+To verify the deployment, you can access the API endpoint at: [https://student-performance-env.eba-mergmnms.us-east-1.elasticbeanstalk.com](https://student-performance-env.eba-mergmnms.us-east-1.elasticbeanstalk.com)
+
+![AWS Elastic Beanstalk environment](./images/aws-eb-env.png)
+
+To test the model, you can use the [awseb/test.py](https://github.com/alfanugraha/student-performance/blob/master/awseb/test.py) script with the following command:
+
+```bash
+python awseb/test.py 
 ```
 
 ## License
