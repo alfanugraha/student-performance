@@ -1,6 +1,6 @@
 import requests
 
-host = 
+host = 'student-performance-env.eba-mergmnms.us-east-1.elasticbeanstalk.com'
 url = f'http://{host}/predict'
 
 student = {
